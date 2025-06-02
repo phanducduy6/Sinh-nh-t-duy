@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sinh Nhật của em</title>
   <style>
     body {
@@ -65,6 +65,15 @@
       backdrop-filter: blur(5px);
     }
 
+    .input-box.updated {
+      animation: fadeIn 0.15s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
     .keypad {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -87,6 +96,12 @@
     .keypad button:hover {
       background-color: #ffd6e8;
       transform: scale(1.05);
+    }
+
+    .keypad button:active {
+      transform: scale(0.95);
+      background-color: #ffccdd;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -120,7 +135,16 @@
     function press(num) {
       if (input.length < 8) {
         input += num;
-        document.getElementById("inputBox").innerText = input;
+        const box = document.getElementById("inputBox");
+        box.innerText = input;
+        box.classList.remove("updated");
+        void box.offsetWidth;
+        box.classList.add("updated");
+
+        // rung nhẹ nếu có hỗ trợ
+        if (navigator.vibrate) {
+          navigator.vibrate(20);
+        }
       }
     }
 
@@ -130,7 +154,7 @@
     }
 
     function submit() {
-      const birthdayCode = "13062005"; // mã bí mật
+      const birthdayCode = "28062007";
       if (input === birthdayCode) {
         alert("🎉 Chính xác! Chúc mừng sinh nhật em yêu 💖🎂");
       } else {
