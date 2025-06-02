@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinh Nhật của em</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-image: url('https://i.imgur.com/NXW1dnP.jpg'); /* Thay bằng link ảnh nền của bạn */
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(2px);
+    }
+
+    .overlay {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 300px;
+      margin: 60px auto;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .info-box {
+      margin-bottom: 10px;
+    }
+
+    .avatar {
+      font-size: 24px;
+    }
+
+    .nickname {
+      font-weight: bold;
+      color: #ff69b4;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .input-box {
+      height: 40px;
+      border: 2px solid #fff;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      line-height: 40px;
+      font-size: 24px;
+      letter-spacing: 5px;
+      text-align: center;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .keypad button {
+      font-size: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background-color: white;
+      color: pink;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+    }
+
+    .keypad button:hover {
+      background-color: #ffe6f0;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="info-box">
+      <div class="avatar">📛</div>
+      <div class="nickname">vk iu😘</div>
+    </div>
+    <div class="title">Sinh Nhật của em😊</div>
+    <div class="input-box" id="inputBox"></div>
+    <div class="keypad">
+      <button onclick="press(1)">1</button>
+      <button onclick="press(2)">2</button>
+      <button onclick="press(3)">3</button>
+      <button onclick="press(4)">4</button>
+      <button onclick="press(5)">5</button>
+      <button onclick="press(6)">6</button>
+      <button onclick="press(7)">7</button>
+      <button onclick="press(8)">8</button>
+      <button onclick="press(9)">9</button>
+      <button onclick="clearInput()">X</button>
+      <button onclick="press(0)">0</button>
+      <button onclick="submit()">✔️</button>
+    </div>
+  </div>
+
+  <script>
+    let input = "";
+
+    function press(num) {
+      if (input.length < 8) {
+        input += num;
+        document.getElementById("inputBox").innerText = input;
+      }
+    }
+
+    function clearInput() {
+      input = "";
+      document.getElementById("inputBox").innerText = "";
+    }
+
+    function submit() {
+      const birthdayCode = "02072001"; // Thay bằng ngày sinh đúng
+      if (input === birthdayCode) {
+        alert("Chính xác! Chúc mừng sinh nhật em 💖");
+      } else {
+        alert("Sai mất rồi 😢");
+        clearInput();
+      }
+    }
+  </script>
+</body>
+</html>
