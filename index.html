@@ -3,82 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sinh Nhật Bạn</title>
+  <title>Sinh Nhật của em</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
-      background-image: url('https://i.postimg.cc/Y0rjm97L/IMG-3332.jpg'); /* Ảnh nền ở đây */
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://i.postimg.cc/Y0rjm97L/IMG-3332.jpg');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       backdrop-filter: blur(2px);
     }
 
     .overlay {
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 20px;
-      padding: 20px;
-      max-width: 300px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 30px;
+      padding: 25px;
+      max-width: 320px;
       margin: 60px auto;
       text-align: center;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .info-box {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .avatar {
-      font-size: 28px;
+      font-size: 30px;
+      color: white;
     }
 
     .nickname {
       font-weight: bold;
-      color: #ff69b4;
       font-size: 16px;
+      color: #ff66b2;
     }
 
     .title {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
+      color: white;
       margin: 15px 0;
     }
 
     .input-box {
-      height: 40px;
-      border: 2px solid #fff;
-      background-color: rgba(255, 255, 255, 0.6);
-      border-radius: 10px;
-      margin-bottom: 15px;
-      line-height: 40px;
-      font-size: 24px;
-      letter-spacing: 5px;
+      height: 50px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      line-height: 50px;
+      font-size: 26px;
+      letter-spacing: 6px;
       text-align: center;
+      color: #fff;
+      font-weight: bold;
+      backdrop-filter: blur(5px);
     }
 
     .keypad {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      gap: 12px;
     }
 
     .keypad button {
-      font-size: 20px;
-      padding: 15px;
+      font-size: 22px;
+      padding: 18px;
       border: none;
-      border-radius: 10px;
-      background-color: white;
-      color: pink;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #ff4da6;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: all 0.2s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
     }
 
     .keypad button:hover {
-      background-color: #ffe6f0;
+      background-color: #ffd6e8;
       transform: scale(1.05);
     }
   </style>
@@ -86,10 +93,10 @@
 <body>
   <div class="overlay">
     <div class="info-box">
-      <div class="avatar">🎂</div>
-      <div class="nickname">Bạn thân của tui 😘</div>
+      <div class="avatar">🎀</div>
+      <div class="nickname">vk iu 😘</div>
     </div>
-    <div class="title">Sinh nhật bạn 😊</div>
+    <div class="title">Sinh Nhật của em 😊</div>
     <div class="input-box" id="inputBox"></div>
     <div class="keypad">
       <button onclick="press(1)">1</button>
@@ -123,11 +130,11 @@
     }
 
     function submit() {
-      const birthdayCode = "28062007"; // Đổi mã sinh nhật nếu muốn
+      const birthdayCode = "13062005"; // mã bí mật
       if (input === birthdayCode) {
-        alert("🎉 Chính xác! Chúc mừng sinh nhật bạn 🎂🎈");
+        alert("🎉 Chính xác! Chúc mừng sinh nhật em yêu 💖🎂");
       } else {
-        alert("Sai rồi 😢 Thử lại nha!");
+        alert("Sai rồi rồi 😢 thử lại nhaaa ~");
         clearInput();
       }
     }
