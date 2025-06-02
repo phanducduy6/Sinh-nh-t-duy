@@ -157,12 +157,111 @@
     function submit() {
       const birthdayCode = "28062007";
       if (input === birthdayCode) {
-        alert("🎉 Chính xác! Chúc mừng sinh nhật em yêu 💖🎂");
+        alert("🎉 Chính xác! Chúc mừng sinh nhật 💖🎂");
       } else {
         alert("Sai rồi rồi 😢 thử lại nhaaa ~");
         clearInput();
       }
     }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc mừng sinh nhật</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fff0f5, #fce4ec);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #f04e94;
+      margin-top: 60px;
+      text-shadow: 2px 2px 5px rgba(255,105,180,0.3);
+    }
+
+    p {
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 18px;
+      color: #b3005f;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      margin-top: 30px;
+      background-color: #ff5ca2;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ff82bb;
+      transform: scale(1.05);
+    }
+
+    /* Bong bóng hồng bay */
+    .bubble {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background: #ffd6e8;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Chúc mừng sinh nhật 🎉</h1>
+  <p>
+    Chúc mừng sinh nhật người con gái tuyệt nhất cuộc đời anh!  
+    Anh mong em luôn mạnh khỏe, luôn rạng rỡ và hạnh phúc.  
+    Anh sẽ luôn cố gắng để mang đến cho em những điều đẹp nhất,  
+    vì em xứng đáng được yêu thương trọn vẹn.
+  </p>
+
+  <button class="button">🎁 Mở quà bất ngờ</button>
+
+  <!-- Bong bóng tạo động -->
+  <script>
+    function createBubble() {
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+      bubble.style.left = Math.random() * 100 + "vw";
+      bubble.style.animationDuration = (6 + Math.random() * 4) + "s";
+      bubble.style.backgroundColor = Math.random() > 0.5 ? "#ffb6d9" : "#ffd6e8";
+      document.body.appendChild(bubble);
+      setTimeout(() => bubble.remove(), 10000);
+    }
+    setInterval(createBubble, 300);
   </script>
 </body>
 </html>
