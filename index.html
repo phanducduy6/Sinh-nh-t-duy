@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> chúc mừng sinh nhật bạn </title>
+  <title>Sinh Nhật Bạn</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background-image: url('https://i.imgur.com/NXW1dnP.jpg'); /* Thay bằng link ảnh nền của bạn */
+      background-image: url('https://i.imgur.com/kR0G1pL.jpg'); /* Ảnh nền ở đây */
       background-size: cover;
       background-position: center;
       backdrop-filter: blur(2px);
@@ -31,18 +31,19 @@
     }
 
     .avatar {
-      font-size: 24px;
+      font-size: 28px;
     }
 
     .nickname {
       font-weight: bold;
       color: #ff69b4;
+      font-size: 16px;
     }
 
     .title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
-      margin: 10px 0;
+      margin: 15px 0;
     }
 
     .input-box {
@@ -85,10 +86,10 @@
 <body>
   <div class="overlay">
     <div class="info-box">
-      <div class="avatar">📛</div>
-      <div class="nickname">chúc bạn sinh nhật 😘</div>
+      <div class="avatar">🎂</div>
+      <div class="nickname">Bạn thân của tui 😘</div>
     </div>
-    <div class="title">nhập Sinh Nhật của bạn😊</div>
+    <div class="title">Sinh nhật bạn 😊</div>
     <div class="input-box" id="inputBox"></div>
     <div class="keypad">
       <button onclick="press(1)">1</button>
@@ -122,11 +123,11 @@
     }
 
     function submit() {
-      const birthdayCode = "28062007"; // Thay bằng ngày sinh đúng
+      const birthdayCode = "28062007"; // Đổi mã sinh nhật nếu muốn
       if (input === birthdayCode) {
-        alert("Chính xác! Chúc mừng sinh nhật bạn 💖");
+        alert("🎉 Chính xác! Chúc mừng sinh nhật bạn 🎂🎈");
       } else {
-        alert("Sai mất rồi 😢");
+        alert("Sai rồi 😢 Thử lại nha!");
         clearInput();
       }
     }
