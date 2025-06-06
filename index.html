@@ -1,4 +1,4 @@
-i<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
@@ -86,23 +86,23 @@ i<!DOCTYPE html>
       padding: 18px;
       border: none;
       border-radius: 15px;
-      background-color: rgba(255, 255, 255, 0.8);
-      color: #ff4da6;
+      background: linear-gradient(135deg, #ff99cc, #ff66b2);
+      color: white;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
     .keypad button:hover {
-      background-color: #FFFFFF;
       transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(255, 105, 180, 0.5);
     }
 
     .keypad button:active {
       transform: scale(0.95);
-      background-color: #ffccdd;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, #ff66b2, #ff3385);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -110,7 +110,7 @@ i<!DOCTYPE html>
   <div class="overlay">
     <div class="info-box">
       <div class="avatar">🎀</div>
-      <div class="nickname">DUY CHÚC BẠN SINH NHẬT VUI VẺ  😘</div>
+      <div class="nickname">DUY CHÚC BẠN SINH NHẬT VUI VẺ 😘</div>
     </div>
     <div class="title">NHẬP NGÀY SINH CỦA BẠN 😊</div>
     <div class="input-box" id="inputBox"></div>
@@ -129,72 +129,38 @@ i<!DOCTYPE html>
       <button onclick="submit()">✔️</button>
     </div>
   </div>
-  <script>
-  let input = ""; // ← Cần khai báo để lưu dữ liệu đầu vào
-
-  function press(num) {
-    input += num;
-    const box = document.getElementById("inputBox");
-    box.innerText = input;
-    box.classList.add("updated");
-    setTimeout(() => box.classList.remove("updated"), 150);
-  }
-
-  function clearInput() {
-    input = "";
-    document.getElementById("inputBox").innerText = "";
-  }
-
-  function submit() {
-    const birthdayCode = "28062007";
-    if (input === birthdayCode) {
-      alert("🎉 Chính xác! Chúc mừng sinh nhật 💖🎂");
-     window.location.href = "https://phanducduy6.github.io/Sinh-nh-t-duy/";
-    } else {
-      alert("Sai ngày sinh rồi 😢 thử lại nhaa ~");
-      clearInput();
-    }
-  }
-
-  // ⌨️ Bắt phím "v" hoặc "V" để gọi submit()
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "v" || event.key === "V") {
-      submit();
-    }
-  });
-</script>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <style>
-    html, body {
-      touch-action: manipulation;
-    }
-
-    .box {
-      width: 100%;
-      height: 200px;
-      background: #ddd;
-      text-align: center;
-      line-height: 200px;
-      font-size: 24px;
-    }
-  </style>
-</head>
-<body>
-  <div class="box">For: phan đức duy</div>
 
   <script>
-    let lastTouchTime = 0;
+    let input = "";
 
-    document.addEventListener('touchend', function (event) {
-      const now = new Date().getTime();
-      if (now - lastTouchTime <= 300) {
-        event.preventDefault(); // ngăn zoom
+    function press(num) {
+      input += num;
+      const box = document.getElementById("inputBox");
+      box.innerText = input;
+      box.classList.add("updated");
+      setTimeout(() => box.classList.remove("updated"), 150);
+    }
+
+    function clearInput() {
+      input = "";
+      document.getElementById("inputBox").innerText = "";
+    }
+
+    function submit() {
+      const birthdayCode = "28062007";
+      if (input === birthdayCode) {
+        alert("🎉 Chính xác! Chúc mừng sinh nhật 💖🎂");
+        window.location.href = "https://phanducduy6.github.io/Sinh-nh-t-duy/";
+      } else {
+        alert("Sai ngày sinh rồi 😢 thử lại nhaa ~");
+        clearInput();
       }
-      lastTouchTime = now;
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "v" || event.key === "V") {
+        submit();
+      }
     });
   </script>
 </body>
