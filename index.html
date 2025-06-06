@@ -86,23 +86,23 @@
       padding: 18px;
       border: none;
       border-radius: 15px;
-      background: linear-gradient(135deg, #ff99cc, #ff66b2);
-      color: white;
+      background-color: rgba(255, 200, 230, 0.85);
+      color: #c2185b;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
     }
 
     .keypad button:hover {
+      background-color: #ffe6f0;
       transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(255, 105, 180, 0.5);
     }
 
     .keypad button:active {
       transform: scale(0.95);
-      background: linear-gradient(135deg, #ff66b2, #ff3385);
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+      background-color: #ffc1e3;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -149,8 +149,7 @@
     function submit() {
       const birthdayCode = "28062007";
       if (input === birthdayCode) {
-        alert("🎉 Chính xác! Chúc mừng sinh nhật 💖🎂");
-        window.location.href = "https://phanducduy6.github.io/Sinh-nh-t-duy/";
+        window.location.href = "https://phanducduy6.github.io/Sinh-nh-t/";
       } else {
         alert("Sai ngày sinh rồi 😢 thử lại nhaa ~");
         clearInput();
