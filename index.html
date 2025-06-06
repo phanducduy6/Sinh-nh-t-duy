@@ -130,8 +130,18 @@ i<!DOCTYPE html>
     </div>
   </div>
   <script>
+  let input = ""; // ← Cần khai báo để lưu dữ liệu đầu vào
+
+  function press(num) {
+    input += num;
+    const box = document.getElementById("inputBox");
+    box.innerText = input;
+    box.classList.add("updated");
+    setTimeout(() => box.classList.remove("updated"), 150);
+  }
+
   function clearInput() {
-   let input = "";
+    input = "";
     document.getElementById("inputBox").innerText = "";
   }
 
@@ -139,7 +149,7 @@ i<!DOCTYPE html>
     const birthdayCode = "28062007";
     if (input === birthdayCode) {
       alert("🎉 Chính xác! Chúc mừng sinh nhật 💖🎂");
-      window.location.href = " https://phanducduy6.github.io/Sinh-nh-t-duy/ "; // 🔗 Thay link tại đây
+      window.location.href = "https://phanducduy6.github.io/Sinh-nh-t-duy/";
     } else {
       alert("Sai ngày sinh rồi 😢 thử lại nhaa ~");
       clearInput();
